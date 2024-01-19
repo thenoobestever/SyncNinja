@@ -11,4 +11,3 @@ public class SyncNinjaApplication {
 		new CommandLine(new HelloCommand()).execute(args);
 	}
 }
-
