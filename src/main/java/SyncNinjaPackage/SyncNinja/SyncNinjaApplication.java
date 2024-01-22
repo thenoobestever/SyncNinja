@@ -21,9 +21,7 @@ public class SyncNinjaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		CommandLine commandLine = new CommandLine(context.getBean(HelloCommand.class));
-//		commandLine.addSubcommand(context.getBean(Hello.class));
-		commandLine.parseWithHandler(new CommandLine.RunLast(), args);
-
+		CommandLine commandLine = new CommandLine(MainCommand.class);
+		commandLine.execute(args);
 	}
 }

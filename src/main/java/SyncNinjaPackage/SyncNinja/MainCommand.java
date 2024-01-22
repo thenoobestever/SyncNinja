@@ -5,11 +5,11 @@ import picocli.CommandLine;
 
 @CommandLine.Command(name = "",
         subcommands = {
-                Hello.class })
+                Init.class })
 @Component
-public class HelloCommand implements Runnable {
+public class MainCommand implements Runnable {
     @Override
     public void run(){
-        System.out.println("Hello world");
+
     }
 }
