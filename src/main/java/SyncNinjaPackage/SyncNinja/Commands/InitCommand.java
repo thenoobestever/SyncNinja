@@ -18,7 +18,9 @@ public class InitCommand implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        String path = System.getProperty("user.dir");
-        directoryService.saveDirectory(path);
+        if (args[0].equals("init")){
+            String path = System.getProperty("user.dir");
+            directoryService.saveDirectory(path);
+        }
     }
 }
