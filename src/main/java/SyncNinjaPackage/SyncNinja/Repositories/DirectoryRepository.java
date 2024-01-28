@@ -10,5 +10,4 @@ import java.util.List;
 @Component
 @Repository
 public interface DirectoryRepository extends Neo4jRepository<Directory, String> {
-    Directory findByPath(String path);
 }

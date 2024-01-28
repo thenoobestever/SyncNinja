@@ -5,6 +5,8 @@ import SyncNinjaPackage.SyncNinja.Repositories.DirectoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class DirectoryService {
     private final DirectoryRepository directoryRepository;
@@ -15,7 +17,14 @@ public class DirectoryService {
     }
 
     public void saveDirectory(String path){
-        Directory directory = new Directory(path);
-        directoryRepository.save(directory);
+        Optional<Directory> directory = directoryRepository.findById(path);
+        if (directory.isPresent()){
+            System.out.println(">:(");
+        }
+        else{
+            Directory new_directory = new Directory(path);
+            directoryRepository.save(new_directory);
+        }
+
     }
 }
