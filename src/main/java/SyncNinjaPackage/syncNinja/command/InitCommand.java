@@ -1,7 +1,7 @@
-package SyncNinjaPackage.SyncNinja.Commands;
+package SyncNinjaPackage.syncNinja.command;
 
-import SyncNinjaPackage.SyncNinja.Services.DirectoryService;
-import SyncNinjaPackage.SyncNinja.SpringAdapter;
+import SyncNinjaPackage.syncNinja.service.DirectoryService;
+import SyncNinjaPackage.syncNinja.util.SpringAdapter;
 import picocli.CommandLine;
 
 @CommandLine.Command(name = "init")

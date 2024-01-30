@@ -1,11 +1,12 @@
-package SyncNinjaPackage.SyncNinja;
+package SyncNinjaPackage.syncNinja;
 
 //import SyncNinjaPackage.SyncNinja.Commands.MainCommand;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import picocli.CommandLine;
+import org.springframework.context.MessageSource;
+
+import java.util.ResourceBundle;
 
 @SpringBootApplication
 public class SyncNinjaApplication {

@@ -1,11 +1,9 @@
-package SyncNinjaPackage.SyncNinja.Repositories;
+package SyncNinjaPackage.syncNinja.repository;
 
-import SyncNinjaPackage.SyncNinja.Models.Directory;
+import SyncNinjaPackage.syncNinja.model.Directory;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Component
 @Repository

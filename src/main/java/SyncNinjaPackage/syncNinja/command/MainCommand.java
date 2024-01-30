@@ -1,6 +1,6 @@
-package SyncNinjaPackage.SyncNinja.Commands;
+package SyncNinjaPackage.syncNinja.command;
 
-import SyncNinjaPackage.SyncNinja.SpringAdapter;
+import SyncNinjaPackage.syncNinja.util.SpringAdapter;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import picocli.CommandLine;

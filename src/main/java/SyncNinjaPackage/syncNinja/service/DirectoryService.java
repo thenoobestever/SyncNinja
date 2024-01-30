@@ -1,8 +1,8 @@
-package SyncNinjaPackage.SyncNinja.Services;
+package SyncNinjaPackage.syncNinja.service;
 
-import SyncNinjaPackage.SyncNinja.Models.Directory;
-import SyncNinjaPackage.SyncNinja.Repositories.DirectoryRepository;
-import SyncNinjaPackage.SyncNinja.ResourceBundle;
+import SyncNinjaPackage.syncNinja.model.Directory;
+import SyncNinjaPackage.syncNinja.repository.DirectoryRepository;
+import SyncNinjaPackage.syncNinja.util.ResourceBundleEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +20,7 @@ public class DirectoryService {
     public void saveDirectory(String path){
         Optional<Directory> directory = directoryRepository.findById(path);
         if (directory.isPresent()){
-            System.out.println(ResourceBundle.DIRECTORY_ALREADY_INITIALIZED.getMessage());
+            System.out.println(ResourceBundleEnum.DIRECTORY_ALREADY_INITIALIZED.getMessage());
         }
         else{
             Directory new_directory = new Directory(path);

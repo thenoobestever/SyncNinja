@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c34c95c-fecf-48ab-9041-4daebb4209b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/ResourceBundle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/config/ResourceBundleConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/messages_ar_JO.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/messages_en_US.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/Services/DirectoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/Services/DirectoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/Commands/InitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/command/InitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/Commands/MainCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/command/MainCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/Models/Directory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Directory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/Repositories/DirectoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/DirectoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/ResourceBundle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/util/ResourceBundleEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/Services/DirectoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/SpringAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/util/SpringAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/SyncNinjaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/SyncNinjaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/service/DirectoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/service/DirectoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SyncNinjaPackage/SyncNinja/SyncNinjaApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SyncNinjaPackage/syncNinja/SyncNinjaApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,26 +54,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "starter",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/nadia/Desktop/SyncNinja",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Starter&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nadia/Desktop/SyncNinja&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Nadia\Desktop\SyncNinja" />
@@ -74,7 +85,7 @@
   <component name="RunManager">
     <configuration name="SyncNinjaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="SyncNinja" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="SyncNinjaPackage.SyncNinja.SyncNinjaApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="SyncNinjaPackage.syncNinja.SyncNinjaApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -101,6 +112,9 @@
       <workItem from="1706468736868" duration="369000" />
       <workItem from="1706470310757" duration="1495000" />
       <workItem from="1706520023686" duration="573000" />
+      <workItem from="1706612031544" duration="236000" />
+      <workItem from="1706611410528" duration="563000" />
+      <workItem from="1706619009791" duration="20000" />
     </task>
     <servers />
   </component>
@@ -117,5 +131,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
