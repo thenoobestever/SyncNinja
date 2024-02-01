@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c34c95c-fecf-48ab-9041-4daebb4209b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Branch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/BranchRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/service/BranchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/SyncNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/command/InitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/command/InitCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/service/DirectoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/service/DirectoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/util/ResourceBundleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/util/ResourceBundleEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_en_US.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Branch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Directory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Directory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/BranchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/BranchRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -122,7 +120,7 @@
       <workItem from="1706641235839" duration="10000" />
       <workItem from="1706775721381" duration="55000" />
       <workItem from="1706775927914" duration="27000" />
-      <workItem from="1706796617503" duration="3939000" />
+      <workItem from="1706796617503" duration="6113000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,5 @@
 package SyncNinjaPackage.syncNinja.model;
-
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
@@ -7,7 +7,7 @@ import org.springframework.data.neo4j.core.schema.Relationship;
 @Node
 public class Branch {
     @Id
-    int id;
+    String id;
     String name;
 
     @Relationship(type = "DIRECTORY")
@@ -16,27 +16,21 @@ public class Branch {
     public Branch() {
     }
 
-    public Branch(int id) {
+    public Branch(String id) {
         this.id = id;
     }
 
     public Branch(String name, Directory directory) {
+        this.id = RandomStringUtils.randomAlphanumeric(16);;
         this.name = name;
         this.directory = directory;
     }
 
-    public Branch(int id, String name, Directory directory) {
-        this.id = id;
-        this.name = name;
-        this.directory = directory;
-    }
-
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -46,5 +40,13 @@ public class Branch {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Directory getDirectory() {
+        return directory;
+    }
+
+    public void setDirectory(Directory directory) {
+        this.directory = directory;
     }
 }
