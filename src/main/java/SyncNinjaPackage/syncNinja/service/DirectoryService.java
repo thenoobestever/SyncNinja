@@ -20,7 +20,7 @@ public class DirectoryService {
     public void saveDirectory(String path){
         Optional<Directory> directory = directoryRepository.findById(path);
         if (directory.isPresent()){
-            System.out.println(ResourceBundleEnum.DIRECTORY_ALREADY_INITIALIZED.getMessage());
+            System.out.println(ResourceBundleEnum.DIRECTORY_ALREADY_INITIALIZED.getMessage(new Object[]{}));
         }
         else{
             Directory new_directory = new Directory(path);
@@ -31,7 +31,7 @@ public class DirectoryService {
     public Directory getDirectory(String path){
         Directory directory = directoryRepository.findById(path).orElse(null);
         if(directory == null){
-            System.out.println(ResourceBundleEnum.DIRECTORY_NOT_INITIALIZED.getMessage());
+            System.out.println(ResourceBundleEnum.DIRECTORY_NOT_INITIALIZED.getMessage(new Object[]{}));
         }
         return directory;
     }

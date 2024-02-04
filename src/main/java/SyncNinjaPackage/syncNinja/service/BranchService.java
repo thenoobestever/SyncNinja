@@ -24,9 +24,8 @@ public class BranchService {
     public void createBranch(String name, String path){
         Optional<Branch> branch = branchRepository.findByName(name);
         if (branch.isPresent()){
-            String messege = ResourceBundleEnum.BRANCH_NAME_EXISTS.getMessage();
-            messege = MessageFormat.format(messege, name);
-            System.out.println(messege);
+            if(directoryService.getDirectory(path) != null){return;}
+            System.out.println(ResourceBundleEnum.BRANCH_NAME_EXISTS.getMessage(new Object[] {name}));
         }
         else{
             Directory directory = directoryService.getDirectory(path);

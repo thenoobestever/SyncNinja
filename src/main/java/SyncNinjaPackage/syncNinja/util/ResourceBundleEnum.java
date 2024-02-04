@@ -1,17 +1,22 @@
 package SyncNinjaPackage.syncNinja.util;
 
-import java.util.ResourceBundle;
+import org.springframework.context.MessageSource;
+import java.util.Locale;
 
 public enum ResourceBundleEnum {
-    DIRECTORY_ALREADY_INITIALIZED,
-    INVALID_INPUT,
-    DIRECTORY_NOT_INITIALIZED,
-    BRANCH_NAME_EXISTS;
+    DIRECTORY_ALREADY_INITIALIZED("directory_already_initialized"),
+    INVALID_INPUT("invalid_input"),
+    DIRECTORY_NOT_INITIALIZED("directory_not_initialized"),
+    BRANCH_NAME_EXISTS("branch_name_exists");
 
-    final ResourceBundle resourceBundle = ResourceBundle.getBundle("messages");
+    private final String key;
+    private final MessageSource messageSource = SpringAdapter.getBean(MessageSource.class);
 
-    public String getMessage(){
-        String key = this.name().toLowerCase();
-        return resourceBundle.getString(key);
+    ResourceBundleEnum(String key) {
+        this.key = key;
+    }
+
+    public String getMessage(Object[] args){
+        return messageSource.getMessage(key, args, Locale.getDefault());
     }
 }
