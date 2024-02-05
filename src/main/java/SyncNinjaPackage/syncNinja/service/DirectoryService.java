@@ -1,5 +1,6 @@
 package SyncNinjaPackage.syncNinja.service;
 
+import SyncNinjaPackage.syncNinja.model.Branch;
 import SyncNinjaPackage.syncNinja.model.Directory;
 import SyncNinjaPackage.syncNinja.repository.DirectoryRepository;
 import SyncNinjaPackage.syncNinja.util.ResourceBundleEnum;
@@ -11,27 +12,31 @@ import java.util.Optional;
 @Service
 public class DirectoryService {
     private final DirectoryRepository directoryRepository;
-
+    private final ResourceMessagingService resourceMessagingService;
     @Autowired
-    public DirectoryService(DirectoryRepository directoryRepository) {
+    public DirectoryService(DirectoryRepository directoryRepository, ResourceMessagingService resourceMessagingService) {
         this.directoryRepository = directoryRepository;
+        this.resourceMessagingService = resourceMessagingService;
     }
 
-    public void saveDirectory(String path){
-        Optional<Directory> directory = directoryRepository.findById(path);
-        if (directory.isPresent()){
-            System.out.println(ResourceBundleEnum.DIRECTORY_ALREADY_INITIALIZED.getMessage(new Object[]{}));
+    public Directory createDirectory(String path) throws Exception {
+        Optional<Directory> OptionalDirectory = directoryRepository.findById(path);
+        if (OptionalDirectory.isPresent()) {
+            throw new Exception(resourceMessagingService.getMessage(ResourceBundleEnum.DIRECTORY_ALREADY_INITIALIZED));
         }
-        else{
-            Directory new_directory = new Directory(path);
-            directoryRepository.save(new_directory);
-        }
+        return directoryRepository.save(new Directory(path));
     }
 
+    public void createDirectoryMainBranch(Directory directory, String name) {
+        if (directory.getBranch() == null) {
+            directory.setBranch(new Branch(name));
+            directoryRepository.save(directory);
+        }
+    }
     public Directory getDirectory(String path){
         Directory directory = directoryRepository.findById(path).orElse(null);
         if(directory == null){
-            System.out.println(ResourceBundleEnum.DIRECTORY_NOT_INITIALIZED.getMessage(new Object[]{}));
+            System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.DIRECTORY_NOT_INITIALIZED));
         }
         return directory;
     }

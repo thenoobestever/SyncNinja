@@ -7,8 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Component
-@Repository
 public interface BranchRepository extends Neo4jRepository<Branch, String> {
     Optional<Branch> findByName(String name);
 }
