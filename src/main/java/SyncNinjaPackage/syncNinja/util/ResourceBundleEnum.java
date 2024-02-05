@@ -4,7 +4,9 @@ import java.util.ResourceBundle;
 
 public enum ResourceBundleEnum {
     DIRECTORY_ALREADY_INITIALIZED,
-    INVALID_INPUT;
+    INVALID_INPUT,
+    DIRECTORY_NOT_INITIALIZED,
+    BRANCH_NAME_EXISTS;
 
     final ResourceBundle resourceBundle = ResourceBundle.getBundle("messages");
 

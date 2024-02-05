@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c34c95c-fecf-48ab-9041-4daebb4209b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/config/ResourceBundleConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/messages_ar_JO.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/messages_en_US.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/SyncNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/Commands/InitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/command/InitCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/Commands/MainCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/command/MainCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/Models/Directory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Directory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/Repositories/DirectoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/DirectoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/ResourceBundle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/util/ResourceBundleEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/Services/DirectoryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/SpringAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/util/SpringAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/SyncNinja/SyncNinjaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/SyncNinjaApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/service/DirectoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/service/DirectoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SyncNinjaPackage/SyncNinja/SyncNinjaApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SyncNinjaPackage/syncNinja/SyncNinjaApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Branch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Directory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Directory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/BranchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/BranchRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -63,9 +56,9 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Starter&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;starter&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nadia/Desktop/SyncNinja&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Nadia/Desktop/GameOfLife&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -115,6 +108,19 @@
       <workItem from="1706612031544" duration="236000" />
       <workItem from="1706611410528" duration="563000" />
       <workItem from="1706619009791" duration="20000" />
+      <workItem from="1706624590012" duration="320000" />
+      <workItem from="1706625225115" duration="19000" />
+      <workItem from="1706625336342" duration="14000" />
+      <workItem from="1706625418567" duration="8000" />
+      <workItem from="1706625578261" duration="78000" />
+      <workItem from="1706625693683" duration="21000" />
+      <workItem from="1706626001891" duration="24000" />
+      <workItem from="1706626203461" duration="41000" />
+      <workItem from="1706626497747" duration="578000" />
+      <workItem from="1706641235839" duration="10000" />
+      <workItem from="1706775721381" duration="55000" />
+      <workItem from="1706775927914" duration="27000" />
+      <workItem from="1706796617503" duration="6113000" />
     </task>
     <servers />
   </component>

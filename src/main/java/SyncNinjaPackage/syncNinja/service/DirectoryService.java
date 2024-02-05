@@ -26,6 +26,13 @@ public class DirectoryService {
             Directory new_directory = new Directory(path);
             directoryRepository.save(new_directory);
         }
+    }
 
+    public Directory getDirectory(String path){
+        Directory directory = directoryRepository.findById(path).orElse(null);
+        if(directory == null){
+            System.out.println(ResourceBundleEnum.DIRECTORY_NOT_INITIALIZED.getMessage());
+        }
+        return directory;
     }
 }
