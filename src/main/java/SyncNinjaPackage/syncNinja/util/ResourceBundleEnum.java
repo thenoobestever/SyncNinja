@@ -10,13 +10,12 @@ public enum ResourceBundleEnum {
     BRANCH_NAME_EXISTS("branch_name_exists");
 
     private final String key;
-    private final MessageSource messageSource = SpringAdapter.getBean(MessageSource.class);
 
     ResourceBundleEnum(String key) {
         this.key = key;
     }
 
-    public String getMessage(Object[] args){
-        return messageSource.getMessage(key, args, Locale.getDefault());
+    public String getKey() {
+        return key;
     }
 }
