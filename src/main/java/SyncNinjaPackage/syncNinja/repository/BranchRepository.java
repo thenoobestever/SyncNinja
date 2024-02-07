@@ -9,4 +9,6 @@ import java.util.Optional;
 
 public interface BranchRepository extends Neo4jRepository<Branch, String> {
     Optional<Branch> findByName(String name);
+
+
 }
