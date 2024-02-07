@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c34c95c-fecf-48ab-9041-4daebb4209b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/service/ResourceMessagingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/BranchableNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/command/InitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/command/InitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/command/CommitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/command/CommitCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Branch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Commit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Commit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Directory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Directory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/BranchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/BranchRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/DirectoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/DirectoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/service/BranchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/service/BranchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/SyncNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/SyncNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/service/DirectoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/service/DirectoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/util/ResourceBundleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/util/ResourceBundleEnum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -51,26 +49,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;starter&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Nadia/Desktop/GameOfLife&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "clean-up-branch",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Nadia/Desktop/GameOfLife",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Nadia\Desktop\SyncNinja" />
@@ -125,6 +124,8 @@
       <workItem from="1706775721381" duration="55000" />
       <workItem from="1706775927914" duration="27000" />
       <workItem from="1706796617503" duration="6113000" />
+      <workItem from="1707227623554" duration="1607000" />
+      <workItem from="1707303107826" duration="1886000" />
     </task>
     <servers />
   </component>

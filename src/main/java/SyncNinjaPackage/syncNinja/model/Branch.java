@@ -1,28 +1,20 @@
 package SyncNinjaPackage.syncNinja.model;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.springframework.data.neo4j.core.schema.Id;
+
 import org.springframework.data.neo4j.core.schema.Node;
+import java.util.UUID;
 
 @Node
-public class Branch {
-    @Id
-    private String id;
+public class Branch extends BranchableNode {
+
     private String name;
 
-    public Branch() {
-    }
-
     public Branch(String name) {
-        this.id = RandomStringUtils.randomAlphanumeric(16);;
+        super();
         this.name = name;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public UUID getId() {
+        return super.getId();
     }
 
     public String getName() {

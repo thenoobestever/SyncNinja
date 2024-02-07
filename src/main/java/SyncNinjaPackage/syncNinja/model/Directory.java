@@ -7,13 +7,10 @@ import org.springframework.data.neo4j.core.schema.Relationship;
 @Node
 public class Directory {
     @Id
-    private String path;
+    private final String path;
 
     @Relationship(type = "MainBranch")
     private Branch branch;
-
-    public Directory() {
-    }
 
     public Directory(String path) {
         this.path = path;
@@ -21,10 +18,6 @@ public class Directory {
 
     public String getPath() {
         return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
     }
 
     public Branch getBranch() {

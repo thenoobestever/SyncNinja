@@ -34,10 +34,7 @@ public class DirectoryService {
         }
     }
     public Directory getDirectory(String path){
-        Directory directory = directoryRepository.findById(path).orElse(null);
-        if(directory == null){
-            System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.DIRECTORY_NOT_INITIALIZED));
-        }
-        return directory;
+        return directoryRepository.findById(path).orElseThrow(() ->
+                new RuntimeException(resourceMessagingService.getMessage(ResourceBundleEnum.DIRECTORY_NOT_INITIALIZED)));
     }
 }

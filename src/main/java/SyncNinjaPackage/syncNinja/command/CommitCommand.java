@@ -1,2 +1,4 @@
-package SyncNinjaPackage.syncNinja.command;public class CommitCommand {
+package SyncNinjaPackage.syncNinja.command;
+
+public class CommitCommand {
 }
