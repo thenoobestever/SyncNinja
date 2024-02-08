@@ -4,7 +4,7 @@ import org.springframework.data.neo4j.core.schema.Node;
 import java.util.UUID;
 
 @Node
-public class Commit extends BranchableNode {
+public class Commit extends NinjaNode {
     private String message;
 
     public Commit(String message) {

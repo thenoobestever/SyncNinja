@@ -3,14 +3,9 @@ package SyncNinjaPackage.syncNinja.model;
 import org.springframework.data.neo4j.core.schema.Node;
 import java.util.UUID;
 
-
 @Node
-public class Branch extends BranchableNode {
-
+public class Branch extends NinjaNode {
     private String name;
-
-    public Branch() {
-    }
 
     public Branch(String name) {
         super();
