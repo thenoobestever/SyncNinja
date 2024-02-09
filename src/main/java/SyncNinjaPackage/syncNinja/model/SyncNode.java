@@ -1,2 +1,3 @@
-package SyncNinjaPackage.syncNinja.model;public class SyncNode {
+package SyncNinjaPackage.syncNinja.model;
+public class SyncNode {
 }

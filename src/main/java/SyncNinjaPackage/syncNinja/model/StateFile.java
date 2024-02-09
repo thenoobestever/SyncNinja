@@ -12,7 +12,7 @@ import java.util.List;
 public class StateFile extends StateTree {
 
 
-
+    private boolean status;
     private List<String> lines;
 
     String hashValue;
@@ -20,6 +20,15 @@ public class StateFile extends StateTree {
         this.path = path;
         hashValue = SHA256.hashValue(path);
         lines = Fetcher.readFile(path);
+        this.status = false;
+    }
+
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public StateFile() {
