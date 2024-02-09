@@ -8,17 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Node
-public class SubDirectory implements InternalTreeInterface{
-
-    @Id
-    String path;
-
+public class StateDirectory extends StateTree {
+    
     @Relationship(type = "HAS" , direction = Relationship.Direction.OUTGOING)
-    List<InternalTreeInterface> internalNodes;
+    private List<StateTree> internalNodes;
+
+    public StateDirectory() {
+    }
 
 
-
-    public SubDirectory(String path) {
+    public StateDirectory(String path) {
         this.path = path;
         this.internalNodes = new ArrayList<>();
     }
@@ -27,16 +26,16 @@ public class SubDirectory implements InternalTreeInterface{
         return path;
     }
 
-    public List<InternalTreeInterface> getInternalNodes() {
+    public List<StateTree> getInternalNodes() {
         return internalNodes;
     }
 
 
     @Override
-    public boolean isDirectory(String path) {
+    public boolean isDirectory() {
         return true;
     }
-    public void addfile(InternalTreeInterface internalfile) {
+    public void addfile(StateTree internalfile) {
 
         this.internalNodes.add(internalfile);
     }
@@ -45,8 +44,10 @@ public class SubDirectory implements InternalTreeInterface{
         this.path = path;
     }
 
-    public void setInternalNodes(List<InternalTreeInterface> internalNodes) {
+    public void setInternalNodes(List<StateTree> internalNodes) {
         this.internalNodes = internalNodes;
     }
+
+
 
 }

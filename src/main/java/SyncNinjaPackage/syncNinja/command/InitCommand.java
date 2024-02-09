@@ -1,9 +1,7 @@
 package SyncNinjaPackage.syncNinja.command;
 
 import SyncNinjaPackage.syncNinja.model.Directory;
-import SyncNinjaPackage.syncNinja.service.BranchService;
 import SyncNinjaPackage.syncNinja.service.DirectoryService;
-import SyncNinjaPackage.syncNinja.service.SubDirectoryService;
 import SyncNinjaPackage.syncNinja.util.SpringAdapter;
 import picocli.CommandLine;
 

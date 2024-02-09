@@ -9,17 +9,32 @@ import java.io.IOException;
 import java.util.List;
 
 @Node
-public class File implements InternalTreeInterface{
+public class StateFile extends StateTree {
 
-    @Id
-    String path;
-    List<String> lines;
+
+
+    private List<String> lines;
 
     String hashValue;
-    public File(String path) throws IOException {
+    public StateFile(String path) throws IOException {
         this.path = path;
         hashValue = SHA256.hashValue(path);
         lines = Fetcher.readFile(path);
+    }
+
+    public StateFile() {
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public void setLines(List<String> lines) {
+        this.lines = lines;
+    }
+
+    public void setHashValue(String hashValue) {
+        this.hashValue = hashValue;
     }
 
     public String getPath() {
@@ -30,7 +45,7 @@ public class File implements InternalTreeInterface{
         return lines;
     }
     @Override
-    public boolean isDirectory(String path) {
+    public boolean isDirectory() {
         return false;
     }
     public String getHashValue() {
