@@ -3,11 +3,17 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 
+import java.util.List;
+import java.util.Set;
+
 @Node
 public class Branch {
     @Id
     private String id;
     private String name;
+
+
+
 
     public Branch() {
     }
@@ -32,4 +38,5 @@ public class Branch {
     public void setName(String name) {
         this.name = name;
     }
+
 }
