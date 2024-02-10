@@ -34,10 +34,10 @@ public class DirectoryService {
             directoryRepository.save(directory);
         }
     }
-    public Directory getDirectory(String path){
+    public Directory getDirectory(String path) throws Exception {
         Directory directory = directoryRepository.findById(path).orElse(null);
         if(directory == null){
-            System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.DIRECTORY_NOT_INITIALIZED));
+            throw new Exception(resourceMessagingService.getMessage(ResourceBundleEnum.DIRECTORY_NOT_INITIALIZED));
         }
         return directory;
     }

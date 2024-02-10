@@ -1,12 +1,12 @@
-package SyncNinjaPackage.syncNinja.service;
+package SyncNinjaPackage.syncNinja.StateTree.StateTreeServices;
 
-import SyncNinjaPackage.syncNinja.model.StateDirectory;
-import SyncNinjaPackage.syncNinja.model.StateFile;
-import SyncNinjaPackage.syncNinja.model.StateTree;
-import SyncNinjaPackage.syncNinja.repository.StateFileRepository;
-import SyncNinjaPackage.syncNinja.repository.StateDirectoryRepository;
+import SyncNinjaPackage.syncNinja.StateTree.models.StateDirectory;
+import SyncNinjaPackage.syncNinja.StateTree.models.StateFile;
+import SyncNinjaPackage.syncNinja.StateTree.Repository.StateFileRepository;
+import SyncNinjaPackage.syncNinja.StateTree.Repository.StateDirectoryRepository;
+import SyncNinjaPackage.syncNinja.service.ResourceMessagingService;
+import SyncNinjaPackage.syncNinja.util.Fetcher;
 import SyncNinjaPackage.syncNinja.util.ResourceBundleEnum;
-import SyncNinjaPackage.syncNinja.util.SHA256;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -95,54 +95,5 @@ public class StateTreeService {
 
     }
 
-    public void getStatus(String path) throws IOException {
-        StateDirectory stateDirectoryOptional = stateDirectoryRepository.findById(path).orElse(null);
-        List<String> tracked = new ArrayList<>();
-        List<String> untracked = new ArrayList<>();
-        if(stateDirectoryOptional!=null){
-            Path mainDirectory = Paths.get(path);
-            List<Path> subList = Files.walk(mainDirectory)
-                    .filter(Files::isRegularFile)
-                    .collect(Collectors.toList());
 
-            for(int i= 0 ; i<subList.size() ; i++){
-                StateFile stateFile = stateFileRepository.findById(subList.get(i).toString()).orElse(null);
-                if(stateFile!=null){
-                    String hashValue = SHA256.hashValue(stateFile.getPath());
-                    if(hashValue.equals(stateFile.getHashValue())){
-                        if(stateFile.getStatus()){
-                            tracked.add(stateFile.getPath());
-                        }
-                        else{
-                            untracked.add(stateFile.getPath());
-                        }
-                    }
-                    else{
-                        untracked.add(stateFile.getPath());
-                    }
-                }
-                else{
-                    untracked.add(stateFile.getPath());
-                }
-
-
-
-            }
-            String redColorCode = "\u001B[31m";
-            String resetColorCode = "\u001B[0m";
-            System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.FILES_READY_TO_BE_COMMITED));
-            for (int i = 0; i <tracked.size() ; i++){
-                System.out.println(tracked.get(i));
-            }
-            System.out.println("\n" + "\n");
-            System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.UNTRACKED_FILES) + "\n");
-            for (int i = 0; i <untracked.size() ; i++){
-                System.out.println(redColorCode+ "\t"+untracked.get(i) + resetColorCode);
-            }
-            System.out.println();
-        }
-        else{
-            System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.DIRECTORY_NOT_INITIALIZED));
-        }
-    }
 }
