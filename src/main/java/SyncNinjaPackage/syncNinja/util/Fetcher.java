@@ -21,7 +21,6 @@ public class Fetcher {
                 lines.add(line);
             }
         }
-
         return lines;
     }
 }

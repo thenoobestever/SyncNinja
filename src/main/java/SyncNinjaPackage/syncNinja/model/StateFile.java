@@ -10,11 +10,7 @@ import java.util.List;
 
 @Node
 public class StateFile extends StateTree {
-
-
-
     private List<String> lines;
-
     String hashValue;
     public StateFile(String path) throws IOException {
         this.path = path;

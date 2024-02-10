@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c34c95c-fecf-48ab-9041-4daebb4209b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/NinjaNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/NinjaNodeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/command/AddCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/stagingArea/StagingDirectory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/stagingArea/StagingFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/stagingArea/StagingNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/stagingArea/StagingTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/stagingAreaRepository/StagingDirectoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/stagingAreaRepository/StagingFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/stagingAreaRepository/StagingNodeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/stagingAreaRepository/StagingTreeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Branch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Commit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/Commit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/StateFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/model/StateFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/BranchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/repository/BranchRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/util/Fetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyncNinjaPackage/syncNinja/util/Fetcher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -59,7 +66,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Cherry-picking in commit-branch",
+    "git-widget-placeholder": "commit-branch",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Nadia/Desktop/SyncNinja",
     "node.js.detected.package.eslint": "true",
