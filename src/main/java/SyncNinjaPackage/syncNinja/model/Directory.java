@@ -5,7 +5,7 @@ import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
 
 @Node
-public class Directory {
+public class Directory extends SyncNode {
     @Id
     private String path;
 
