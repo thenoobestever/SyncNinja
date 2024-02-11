@@ -1,4 +1,4 @@
-package SyncNinjaPackage.syncNinja.StateTree.models;
+package SyncNinjaPackage.syncNinja.stateTree.models;
 
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;

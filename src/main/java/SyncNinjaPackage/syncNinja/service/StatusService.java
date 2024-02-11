@@ -1,8 +1,8 @@
 package SyncNinjaPackage.syncNinja.service;
 
-import SyncNinjaPackage.syncNinja.StateTree.Repository.StateDirectoryRepository;
-import SyncNinjaPackage.syncNinja.StateTree.Repository.StateFileRepository;
-import SyncNinjaPackage.syncNinja.StateTree.models.StateDirectory;
+import SyncNinjaPackage.syncNinja.stateTree.repository.StateDirectoryRepository;
+import SyncNinjaPackage.syncNinja.stateTree.repository.StateFileRepository;
+import SyncNinjaPackage.syncNinja.stateTree.models.StateDirectory;
 import SyncNinjaPackage.syncNinja.util.Fetcher;
 import SyncNinjaPackage.syncNinja.util.ResourceBundleEnum;
 import org.springframework.beans.factory.annotation.Autowired;
