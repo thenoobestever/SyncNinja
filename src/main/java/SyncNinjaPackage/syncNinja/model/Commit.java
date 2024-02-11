@@ -10,7 +10,6 @@ public class Commit extends NinjaNode {
     }
 
     public Commit(String message) {
-        super();
         this.message = message;
     }
 
