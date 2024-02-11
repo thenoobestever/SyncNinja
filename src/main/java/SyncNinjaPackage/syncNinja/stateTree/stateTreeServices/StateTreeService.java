@@ -36,7 +36,7 @@ public class StateTreeService {
         Optional<StateFile> optionalFile = stateFileRepository.findById(path);
         StateFile file = null;
         if(optionalFile.isPresent()){
-            System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.FILE_ALREADY_EXISTS));
+            System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.FILE_ALREADY_EXISTS, new Object[] {path}));
         }
         else{
             file = new StateFile(path);
@@ -83,7 +83,7 @@ public class StateTreeService {
         Optional<StateDirectory> file = stateDirectoryRepository.findById(path);
         StateDirectory stateDirectory = null;
         if(file.isPresent()){
-            System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.SUB_DIRECTORY_ALREADY_EXISTS));
+            System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.SUB_DIRECTORY_ALREADY_EXISTS, new Object[]{path}));
         }
         else{
             stateDirectory = new StateDirectory(path);
