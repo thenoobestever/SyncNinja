@@ -1,9 +1,11 @@
-package SyncNinjaPackage.syncNinja.service;
+package SyncNinjaPackage.syncNinja.StateTree.StateTreeServices;
 
-import SyncNinjaPackage.syncNinja.model.StateDirectory;
-import SyncNinjaPackage.syncNinja.model.StateFile;
-import SyncNinjaPackage.syncNinja.repository.StateFileRepository;
-import SyncNinjaPackage.syncNinja.repository.StateDirectoryRepository;
+import SyncNinjaPackage.syncNinja.StateTree.models.StateDirectory;
+import SyncNinjaPackage.syncNinja.StateTree.models.StateFile;
+import SyncNinjaPackage.syncNinja.StateTree.Repository.StateFileRepository;
+import SyncNinjaPackage.syncNinja.StateTree.Repository.StateDirectoryRepository;
+import SyncNinjaPackage.syncNinja.service.ResourceMessagingService;
+import SyncNinjaPackage.syncNinja.util.Fetcher;
 import SyncNinjaPackage.syncNinja.util.ResourceBundleEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

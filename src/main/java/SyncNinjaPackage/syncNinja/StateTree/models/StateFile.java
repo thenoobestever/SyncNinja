@@ -1,8 +1,7 @@
-package SyncNinjaPackage.syncNinja.model;
+package SyncNinjaPackage.syncNinja.StateTree.models;
 
 import SyncNinjaPackage.syncNinja.util.Fetcher;
 import SyncNinjaPackage.syncNinja.util.SHA256;
-import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 
 import java.io.IOException;
@@ -20,6 +19,7 @@ public class StateFile extends StateTree {
         this.path = path;
         hashValue = SHA256.hashValue(path);
         lines = Fetcher.readFile(path);
+
     }
 
     public StateFile() {

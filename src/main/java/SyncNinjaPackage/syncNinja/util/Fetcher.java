@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Fetcher {
     public static List<String> readFile(String filePath) throws IOException {
@@ -23,5 +24,17 @@ public class Fetcher {
         }
 
         return lines;
+    }
+
+    public static List<String> pathList(Path path) throws IOException {
+        List<Path> pathInDirectory = Files.walk(path)
+                .filter(Files::isRegularFile)
+                .collect(Collectors.toList());
+        List<String> filesInDirectory = new ArrayList<>();
+        for(int i = 0 ; i<pathInDirectory.size() ; i++) {
+            String file = pathInDirectory.get(i).toString();
+            filesInDirectory.add(file);
+        }
+        return filesInDirectory;
     }
 }

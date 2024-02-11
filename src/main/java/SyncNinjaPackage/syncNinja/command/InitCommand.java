@@ -15,6 +15,7 @@ public class InitCommand implements Runnable {
         try {
             Directory directory = directoryService.createDirectory(path);
             directoryService.createDirectoryMainBranch(directory, "main");
+
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
         }
