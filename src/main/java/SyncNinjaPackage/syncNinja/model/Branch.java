@@ -1,17 +1,14 @@
 package SyncNinjaPackage.syncNinja.model;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
 
 @Node
 public class Branch extends NinjaNode {
     private String name;
 
+    public Branch(){
+    }
+
     public Branch(String name) {
-        super();
         this.name = name;
     }
 
