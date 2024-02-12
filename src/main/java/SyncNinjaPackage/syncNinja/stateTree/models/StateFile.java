@@ -1,4 +1,4 @@
-package SyncNinjaPackage.syncNinja.StateTree.models;
+package SyncNinjaPackage.syncNinja.stateTree.models;
 
 import SyncNinjaPackage.syncNinja.util.Fetcher;
 import SyncNinjaPackage.syncNinja.util.SHA256;

@@ -1,11 +1,10 @@
-package SyncNinjaPackage.syncNinja.StateTree.StateTreeServices;
+package SyncNinjaPackage.syncNinja.stateTree.stateTreeServices;
 
-import SyncNinjaPackage.syncNinja.StateTree.models.StateDirectory;
-import SyncNinjaPackage.syncNinja.StateTree.models.StateFile;
-import SyncNinjaPackage.syncNinja.StateTree.Repository.StateFileRepository;
-import SyncNinjaPackage.syncNinja.StateTree.Repository.StateDirectoryRepository;
+import SyncNinjaPackage.syncNinja.stateTree.models.StateDirectory;
+import SyncNinjaPackage.syncNinja.stateTree.models.StateFile;
+import SyncNinjaPackage.syncNinja.stateTree.repository.StateFileRepository;
+import SyncNinjaPackage.syncNinja.stateTree.repository.StateDirectoryRepository;
 import SyncNinjaPackage.syncNinja.service.ResourceMessagingService;
-import SyncNinjaPackage.syncNinja.util.Fetcher;
 import SyncNinjaPackage.syncNinja.util.ResourceBundleEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +13,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -38,7 +36,7 @@ public class StateTreeService {
         Optional<StateFile> optionalFile = stateFileRepository.findById(path);
         StateFile file = null;
         if(optionalFile.isPresent()){
-            System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.FILE_ALREADY_EXISTS));
+            System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.FILE_ALREADY_EXISTS, new Object[] {path}));
         }
         else{
             file = new StateFile(path);
@@ -85,7 +83,7 @@ public class StateTreeService {
         Optional<StateDirectory> file = stateDirectoryRepository.findById(path);
         StateDirectory stateDirectory = null;
         if(file.isPresent()){
-            System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.SUB_DIRECTORY_ALREADY_EXISTS));
+            System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.SUB_DIRECTORY_ALREADY_EXISTS, new Object[]{path}));
         }
         else{
             stateDirectory = new StateDirectory(path);
