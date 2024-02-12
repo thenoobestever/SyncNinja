@@ -30,7 +30,7 @@ public class StatusService {
     public List<String> getUntrackedFiles(List<String> pathList , String directoryPath){
         List<String> untracked = new ArrayList<>();
         StateDirectory stateDirectoryOptional = stateDirectoryRepository.findById(directoryPath).orElse(null);
-        if(stateDirectoryOptional==null){
+        if(stateDirectoryOptional.getInternalNodes().isEmpty()){
             return pathList;
         }
         else{
