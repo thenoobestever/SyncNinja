@@ -1,4 +1,4 @@
-package SyncNinjaPackage.syncNinja.stateTree.models;
+package SyncNinjaPackage.syncNinja.model.StateTreeModel;
 
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
@@ -11,6 +11,7 @@ public class StateDirectory extends StateTree {
     
     @Relationship(type = "HAS" , direction = Relationship.Direction.OUTGOING)
     private List<StateTree> internalNodes;
+
 
     public StateDirectory() {
     }

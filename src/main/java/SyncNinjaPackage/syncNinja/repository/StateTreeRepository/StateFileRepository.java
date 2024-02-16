@@ -1,6 +1,6 @@
-package SyncNinjaPackage.syncNinja.stateTree.repository;
+package SyncNinjaPackage.syncNinja.repository.StateTreeRepository;
 
-import SyncNinjaPackage.syncNinja.stateTree.models.StateFile;
+import SyncNinjaPackage.syncNinja.model.StateTreeModel.StateFile;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 
 public interface StateFileRepository extends Neo4jRepository<StateFile,String> {

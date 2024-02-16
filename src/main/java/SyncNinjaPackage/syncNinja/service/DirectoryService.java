@@ -18,9 +18,9 @@ public class DirectoryService {
     }
 
     public Directory createDirectory(String path) throws Exception {
-        Directory directory = directoryRepository.findById(path).orElseThrow(()->
-                new Exception(resourceMessagingService.getMessage(ResourceBundleEnum.DIRECTORY_ALREADY_INITIALIZED,
-                        new Object[]{path})));
+        if(directoryRepository.existsById(path)){
+            throw new Exception(resourceMessagingService.getMessage(ResourceBundleEnum.DIRECTORY_ALREADY_INITIALIZED, new Object[]{path}));
+        }
         return directoryRepository.save(new Directory(path));
     }
 
@@ -32,7 +32,7 @@ public class DirectoryService {
     }
     public Directory getDirectory(String path) throws Exception {
         return directoryRepository.findById(path).orElseThrow(()->
-                new Exception(resourceMessagingService.getMessage(ResourceBundleEnum.DIRECTORY_ALREADY_INITIALIZED,
+                new Exception(resourceMessagingService.getMessage(ResourceBundleEnum.DIRECTORY_NOT_INITIALIZED,
                         new Object[]{path})));
     }
 }

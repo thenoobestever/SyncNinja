@@ -1,9 +1,9 @@
-package SyncNinjaPackage.syncNinja.stateTree.stateTreeServices;
+package SyncNinjaPackage.syncNinja.service;
 
-import SyncNinjaPackage.syncNinja.stateTree.models.StateDirectory;
-import SyncNinjaPackage.syncNinja.stateTree.models.StateFile;
-import SyncNinjaPackage.syncNinja.stateTree.repository.StateFileRepository;
-import SyncNinjaPackage.syncNinja.stateTree.repository.StateDirectoryRepository;
+import SyncNinjaPackage.syncNinja.model.StateTreeModel.StateDirectory;
+import SyncNinjaPackage.syncNinja.model.StateTreeModel.StateFile;
+import SyncNinjaPackage.syncNinja.repository.StateTreeRepository.StateFileRepository;
+import SyncNinjaPackage.syncNinja.repository.StateTreeRepository.StateDirectoryRepository;
 import SyncNinjaPackage.syncNinja.service.ResourceMessagingService;
 import SyncNinjaPackage.syncNinja.util.ResourceBundleEnum;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +45,7 @@ public class StateTreeService {
         return file;
     }
 
-    public void generateStateTree(String path){
+    /*public void generateStateTree(String path){
         Path mainDirectory = Paths.get(path);
         List<Path> subList = null;
         try {
@@ -77,7 +77,7 @@ public class StateTreeService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     public StateDirectory generateStateDirectoryNode(String path){
         Optional<StateDirectory> file = stateDirectoryRepository.findById(path);
