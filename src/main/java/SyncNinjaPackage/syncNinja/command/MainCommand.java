@@ -7,7 +7,7 @@ import picocli.CommandLine;
 
 @CommandLine.Command(name = "",
         subcommands = {
-                InitCommand.class , StatusCommand.class}
+                InitCommand.class , StatusCommand.class , AddCommand.class}
 )
 @Component
 public class MainCommand implements CommandLineRunner {
