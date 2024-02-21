@@ -15,6 +15,7 @@ public class StatusCommand implements Runnable{
     ResourceMessagingService resourceMessagingService = SpringAdapter.getBean(ResourceMessagingService.class);
     @Override
     public void run() {
+        long startTime = System.currentTimeMillis();
         String path = System.getProperty("user.dir");
         try {
             Object[] status = statusService.getStatus(path);
@@ -36,6 +37,7 @@ public class StatusCommand implements Runnable{
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
+        long endTime = System.currentTimeMillis();
+        System.out.println("Time " + (endTime - startTime) + " MS");
     }
 }

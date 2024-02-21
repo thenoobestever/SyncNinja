@@ -45,7 +45,7 @@ public class StateTreeService {
         return file;
     }
 
-    /*public void generateStateTree(String path){
+    public void generateStateTree(String path){
         Path mainDirectory = Paths.get(path);
         List<Path> subList = null;
         try {
@@ -77,7 +77,7 @@ public class StateTreeService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
     public StateDirectory generateStateDirectoryNode(String path){
         Optional<StateDirectory> file = stateDirectoryRepository.findById(path);
