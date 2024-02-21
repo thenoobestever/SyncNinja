@@ -1,24 +1,26 @@
 package SyncNinjaPackage.syncNinja.service;
 
-import SyncNinjaPackage.syncNinja.stateTree.repository.StateDirectoryRepository;
-import SyncNinjaPackage.syncNinja.stateTree.repository.StateFileRepository;
-import SyncNinjaPackage.syncNinja.stateTree.models.StateDirectory;
-import SyncNinjaPackage.syncNinja.util.Fetcher;
+import SyncNinjaPackage.syncNinja.model.StateTreeModel.StateFile;
+import SyncNinjaPackage.syncNinja.model.StateTreeModel.StateTree;
+import SyncNinjaPackage.syncNinja.repository.StateTreeRepository.StateDirectoryRepository;
+import SyncNinjaPackage.syncNinja.repository.StateTreeRepository.StateFileRepository;
+import SyncNinjaPackage.syncNinja.model.StateTreeModel.StateDirectory;
 import SyncNinjaPackage.syncNinja.util.ResourceBundleEnum;
+import org.neo4j.cypherdsl.core.Cypher;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.neo4j.core.Neo4jTemplate;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class StatusService {
     private final StateDirectoryRepository stateDirectoryRepository;
     private final ResourceMessagingService resourceMessagingService;
     private final StateFileRepository stateFileRepository;
+
 
     @Autowired
     public StatusService(StateDirectoryRepository stateDirectoryRepository, ResourceMessagingService resourceMessagingService, StateFileRepository stateFileRepository) {
@@ -27,44 +29,50 @@ public class StatusService {
         this.stateFileRepository = stateFileRepository;
     }
 
-    public List<String> getUntrackedFiles(List<String> pathList , String directoryPath){
-        List<String> untracked = new ArrayList<>();
-        StateDirectory stateDirectoryOptional = stateDirectoryRepository.findById(directoryPath).orElse(null);
-        if(stateDirectoryOptional.getInternalNodes().isEmpty()){
-            return pathList;
-        }
-        else{
-            for(int i = 0 ; i<pathList.size() ; i++){
-                String path = pathList.get(i);
-                if(stateFileRepository.findById(path).orElse(null)==null){
-                    untracked.add(path);
+    public void currentState(File directory, StateDirectory stateDirectory, List<String> untracked) {
+        File filesList[] = directory.listFiles();
+        Map<String, StateTree> stateTreeMap = stateDirectory.getInternalNodes().stream()
+                .collect(Collectors.toMap((stateTree) -> stateTree.getPath(), (stateTree -> stateTree)));
+
+        for (File file: filesList) {
+            if (file.isDirectory()) {
+                StateDirectory stateDirectoryChild = (StateDirectory) stateTreeMap.get(file.getPath());
+                if(stateDirectoryChild == null) {
+                    addAllFilesInDirectory(file, untracked);
+
+                } else if (stateDirectoryChild.getLastModified() != file.lastModified()) {
+                    currentState(file, stateDirectoryChild, untracked);
                 }
-                /*else{
-                    code will be done after the staging area is done (to check in staging area
-                    and also to check if any tracked file was modified)
-                }*/
+            } else {
+                StateFile stateFile = (StateFile) stateTreeMap.get(file.getPath());
+                if (stateFile == null || stateFile.getLastModified() != file.lastModified()) {
+                    untracked.add(file.toString());
+                }
             }
         }
-        return untracked;
-    }
-    public void getStatus(String path) throws IOException {
-        Path mainDirectory = Paths.get(path);
-        List<String> allFilesInDirectory = Fetcher.pathList(mainDirectory);
-        List<String> tracked = new ArrayList<>();
-        List<String> untracked = getUntrackedFiles(allFilesInDirectory, path);
-        String greenColor = "\u001B[32m";
-        String redColorCode = "\u001B[31m";
-        String resetColorCode = "\u001B[0m";
-        System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.FILES_READY_TO_BE_COMMITED));
-        for (int i = 0; i <tracked.size() ; i++){
-            System.out.println(greenColor+ "\t" +tracked.get(i) + resetColorCode);
-        }
-        System.out.println("\n" + "\n");
-        System.out.println(resourceMessagingService.getMessage(ResourceBundleEnum.UNTRACKED_FILES) + "\n");
-        for (int i = 0; i <untracked.size() ; i++){
-            System.out.println(redColorCode+ "\t"+untracked.get(i) + resetColorCode);
-        }
-        System.out.println();
 
+    }
+
+    private void addAllFilesInDirectory(File directory, List<String> untracked) {
+        for (File file : directory.listFiles()) {
+            if (file.isDirectory()) {
+                addAllFilesInDirectory(file, untracked);
+            } else if (file.isFile()) {
+                untracked.add(file.getPath());
+            }
+        }
+    }
+
+    public Object[] getStatus(String path) throws Exception {
+        if (!stateDirectoryRepository.existsById(path)) {
+            throw new Exception(resourceMessagingService.getMessage(ResourceBundleEnum.DIRECTORY_ALREADY_INITIALIZED, new Object[]{path}));
+        }
+        List<String> tracked = new ArrayList<>();
+        List<String> untracked = new ArrayList<>();
+
+        StateDirectory stateDirectory = stateDirectoryRepository.findById(path).orElse(null);
+
+        currentState(new File(path), stateDirectory, untracked);
+        return new Object[]{tracked, untracked};
     }
 }

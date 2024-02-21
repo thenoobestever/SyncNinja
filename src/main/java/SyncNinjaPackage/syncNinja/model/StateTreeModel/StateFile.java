@@ -1,4 +1,4 @@
-package SyncNinjaPackage.syncNinja.stateTree.models;
+package SyncNinjaPackage.syncNinja.model.StateTreeModel;
 
 import SyncNinjaPackage.syncNinja.util.Fetcher;
 import SyncNinjaPackage.syncNinja.util.SHA256;
@@ -9,14 +9,11 @@ import java.util.List;
 
 @Node
 public class StateFile extends StateTree {
-
-
-
     private List<String> lines;
 
     String hashValue;
     public StateFile(String path) throws IOException {
-        this.path = path;
+        super(path);
         hashValue = SHA256.hashValue(path);
         lines = Fetcher.readFile(path);
 
