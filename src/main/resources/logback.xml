@@ -1,0 +1,6 @@
+<!-- logback.xml -->
+<configuration>
+    <root level="warn">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
